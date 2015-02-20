@@ -1,0 +1,11 @@
+// Bootsrap
+@import "bootstrap/bootstrap";
+
+// Components
+@import "components/main";
+
+// Layouts
+@import "layouts/pageSlider",
+		"layouts/pageContent",
+		"layouts/mainContent",
+		"layouts/mainSidebar";
