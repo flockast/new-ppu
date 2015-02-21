@@ -2,10 +2,13 @@
 @import "bootstrap/bootstrap";
 
 // Components
-@import "components/main";
+@import "components/main",
+		"components/owl.carousel";
 
 // Layouts
 @import "layouts/pageSlider",
 		"layouts/pageContent",
 		"layouts/mainContent",
-		"layouts/mainSidebar";
+		"layouts/mainSidebar",
+		"layouts/contentCarousel",
+		"layouts/pageFooter";

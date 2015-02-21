@@ -14,7 +14,7 @@
 			display: inline-block;
 			vertical-align: top;
 			margin-bottom: 60px;
-			@media (max-width: $screen-sm-max + 1) {
+			@media (max-width: $screen-sm-max) {
 				width: 100%;
 			}
 			@media (max-width: $screen-sm-min) {
@@ -43,7 +43,7 @@
 				font-size: 18px;
 				text-decoration: underline;
 				cursor: pointer;
-				&:hover > {
+				&:hover {
 					text-decoration: none;
 				}
 			}
@@ -58,6 +58,9 @@
 			margin: 0 auto;
 			display: block;
 			width: 180px;
+			@media (max-width: $screen-sm-max) {
+				margin-bottom: 120px;
+			}
 		}
 	}
 }
