@@ -3,7 +3,8 @@
 
 // Components
 @import "components/main",
-		"components/owl.carousel";
+		"components/owl.carousel",
+		"components/font-awesome";
 
 // Layouts
 @import "layouts/pageSlider",
@@ -11,4 +12,9 @@
 		"layouts/mainContent",
 		"layouts/mainSidebar",
 		"layouts/contentCarousel",
-		"layouts/pageFooter";
+		"layouts/pageFooter",
+		"layouts/singlePost",
+		"layouts/otherPosts",
+		"layouts/pageProducts",
+		"layouts/pageSingleProduct",
+		"layouts/pageContacts";

@@ -2,32 +2,85 @@
 
 	$(function(){
 
-		var slider1, slider2;
+		var App = {
+			init: function() {
+				var base = this;
 
-		slider1 = $("#carousel").owlCarousel({
-			navigation : true, // Show next and prev buttons
-			slideSpeed : 300,
-			paginationSpeed : 400,
-			singleItem:true,
-			autoPlay: 3000
+				base.addEvents();
+				base.addPlugins();
+			},
+			addEvents: function() {
+				var base = this;
 
-			// "singleItem:true" is a shortcut for:
-			// items : 1, 
-			// itemsDesktop : false,
-			// itemsDesktopSmall : false,
-			// itemsTablet: false,
-			// itemsMobile : false
-		});
+				$("#previewClose").click(function(event){
+					event.preventDefault();
+					base.closeOpenPreview(this);
+				});
 
-		// slider2 = $("#productsCarousel").owlCarousel({
- 
-  //     autoPlay: 3000, //Set AutoPlay to 3 seconds
-  //     items : 4,
-  //     itemsDesktop : [1199,3],
-  //     itemsDesktopSmall : [979,3],
-  //     navigation : true
- 
-  // 	});
+				$('#buttonMore').on('click', function () {
+				    $(this).button('loading')
+				    base.addMorePosts(this);
+				    
+				});
+
+				$("#buyProduct").submit(function(event){
+					event.preventDefault();
+					$(this).find(".form-group").removeClass("has-error");
+					base.validateForm(this);
+				});
+			},
+			validateForm: function(elem) {
+				var base = this, errors = new Array();
+
+				if($(elem).find("input[name=name]").val() == "") errors.push("name");
+				if($(elem).find("input[name=contacts]").val() == "") errors.push("contacts");
+				if(errors.length == 0) 
+					base.sendMail($(elem).serialize());
+				else 
+					base.showErrors(errors);
+			},
+			showErrors: function(errors) {
+				var i;
+				for(i = 0; i < errors.length; i++) {
+					$("input[name="+errors[i]+"]").parent(".form-group").addClass("has-error");
+				}
+			},
+			sendMail: function(dates) {
+				// ajax
+			},
+			addPlugins: function() {
+				var base = this;
+
+				base.startTopSlider({
+					navigation : true,
+					slideSpeed : 300,
+					paginationSpeed : 400,
+					singleItem:true,
+					autoPlay: 3000
+				});
+			},
+			startTopSlider: function(config) {
+				var base = this;
+
+				base.topSlider = $("#carousel").owlCarousel(config);
+			},
+			closeOpenPreview: function(elem) {
+				var text;
+
+				$(elem).siblings(".singlePreview").toggle();
+				text = ($(elem).text() == "Скрыть") ? "Показать" : "Скрыть";
+				$(elem).text(text);
+			},
+			addMorePosts: function(elem) {
+
+				// ajax
+				setTimeout(function(){
+					$(elem).button('reset');
+				}, 1000);
+			}
+		}
+
+		App.init();
 
 	});
 

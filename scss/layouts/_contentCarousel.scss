@@ -8,14 +8,14 @@
 	.owl-prev, .owl-next {
 		position: absolute;
 		top: 50%;
+		width: 48px;
+		height: 48px;
 		margin-top: -24px;
 		background: url(../img/slider-arrows.png);
 		text-indent: -9999px;
 	}
 	.owl-prev {
 		left: 10px;
-		width: 48px;
-		height: 48px;
 		background-position: 0 0px;
 		&:hover {
 			background-position: 0 -48px;
@@ -23,8 +23,6 @@
 	}	
 	.owl-next {
 		right: 10px;
-		width: 48px;
-		height: 48px;
 		background-position: -48px 0px;		
 		&:hover {
 			background-position: -48px -48px;

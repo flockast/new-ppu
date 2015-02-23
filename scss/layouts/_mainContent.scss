@@ -1,9 +1,7 @@
 .mainContent {
-	@include make-lg-column(8);
-	@include make-md-column(8);
 	@include make-sm-column(8);
-	.topTitle {
-		margin-bottom: 22px;
+	@media (max-width: $screen-sm-max) {
+		margin-bottom: 120px;
 	}
 	.listPosts {
 		@include make-row();
@@ -15,12 +13,6 @@
 			vertical-align: top;
 			margin-bottom: 60px;
 			@media (max-width: $screen-sm-max) {
-				width: 100%;
-			}
-			@media (max-width: $screen-sm-min) {
-				width: 50%;
-			}
-			@media (max-width: $screen-xs-max) {
 				width: 100%;
 			}
 			.photo {
@@ -58,9 +50,9 @@
 			margin: 0 auto;
 			display: block;
 			width: 180px;
-			@media (max-width: $screen-sm-max) {
-				margin-bottom: 120px;
-			}
 		}
+	}
+	.bottomPagenation {
+		text-align: center;
 	}
 }

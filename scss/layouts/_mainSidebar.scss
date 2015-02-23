@@ -1,6 +1,4 @@
 .mainSidebar {
-	@include make-lg-column(4);
-	@include make-md-column(4);
 	@include make-sm-column(4);
 	& > div {
 		margin-bottom: 40px;
@@ -8,6 +6,19 @@
 	.searchBlock {
 		.inputBlock {
 			@include make-xs-column(8);
+			i {
+				position: absolute;
+				top: 9px;
+				right: 25px;
+				color: #ccc;
+				transition: .2s;
+			}
+			input {
+				padding-right: 30px;
+			}
+			input:focus + i{
+				color:#5A5A5A;
+			}
 		}
 		.buttonBlock {
 			@include make-xs-column(4, 0);
@@ -20,9 +31,10 @@
 			display: -moz-inline-stack;
        	 	display: inline-block;
        	 	*display: inline;
-       	 	margin: 0 6px 6px; 
+       	 	margin: 0 6px 6px;
 			padding: 2px 5px;
 			border: 1px solid #B3B3B3;
+			border-radius: 3px;
 			color: #222;
 			font-weight: bold;
 			&:hover {
